@@ -3,3 +3,5 @@
 .relationship-detail{font-size:12px;color:#b6cad7;line-height:1.6}.coop-panel{margin-top:18px}.coop-panel textarea{display:block;width:100%;min-height:64px;resize:vertical;margin:8px 0;background:#112738;color:#e4eff7;border:1px solid #39566d;border-radius:8px;padding:10px;box-sizing:border-box}.dao-intervention #viewport{box-shadow:0 0 60px #f0d98b;filter:sepia(.35)}#challenge-buttons{flex-wrap:wrap}.utility{flex-wrap:wrap}
 
 .coop-panel label{display:block}.coop-panel small{display:block;line-height:1.6}
+
+.character-portraits{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}.character-portraits strong,.character-portraits small{display:block;margin-top:5px}.character-portraits small{font-size:10px;line-height:1.5;color:#b2c6d4}.portrait{width:100%;aspect-ratio:1/1.35;border-radius:8px;background-image:url('assets/characters.png');background-size:200% 100%;background-repeat:no-repeat;background-color:#45525a}.portrait-son{background-position:right center}.portrait-binh{background-position:left center}
