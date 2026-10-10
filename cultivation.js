@@ -9,7 +9,7 @@ export const maxHealth=s=>100+s.level*3;
 export const job=s=>JOBS[s.task%JOBS.length];
 export const difficulty=s=>({length:Math.min(9,2+Math.floor((s.level-1)/3)),seconds:Math.max(10,28-(s.level-1)*.5),qi:35+s.level*10+s.artifact*5,stones:12+s.level*3,damage:5+s.level*2});
 export function log(s,t){s.logs.unshift(t);s.logs=s.logs.slice(0,12);}
-export function finishTask(s,success){const d=difficulty(s);if(success){s.qi+=d.qi;s.stones+=d.stones;s.completed++;s.task++;s.bond=Math.min(100,s.bond+3);log(s,`${job({...s,task:s.task-1}).name}: +${d.qi} tu vi, +${d.stones} linh thạch.`);}else{s.hp=Math.max(0,s.hp-d.damage);log(s,`Thử thách thất bại: mất ${d.damage} sinh lực. Có thể thử lại hoặc nghỉ tại pantry.`);}return d;}
+export function finishTask(s,success,title){const d=difficulty(s);if(success){s.qi+=d.qi;s.stones+=d.stones;s.completed++;s.task++;s.bond=Math.min(100,s.bond+3);log(s,`${title||job({...s,task:s.task-1}).name}: +${d.qi} tu vi, +${d.stones} linh thạch.`);}else{s.hp=Math.max(0,s.hp-d.damage);log(s,`Thử thách thất bại: mất ${d.damage} sinh lực. Có thể thử lại hoặc nghỉ tại pantry.`);}return d;}
 export function breakthrough(s){if(s.level>=36||s.qi<qiRequired(s)||s.stones<breakthroughCost(s))return false;s.qi-=qiRequired(s);s.stones-=breakthroughCost(s);s.level++;s.hp=maxHealth(s);log(s,`Đột phá! Level ${s.level} · ${realm(s)}. Nhiệm vụ hệ thống khó hơn.`);return true;}
 export function upgradeArtifact(s){if(s.stones<artifactCost(s))return false;s.stones-=artifactCost(s);s.artifact++;log(s,`Pháp khí đạt cấp ${s.artifact}. Phần thưởng tu vi tăng.`);return true;}
 export function meditate(s){if(s.hp<=0)return false;s.qi+=2+s.level+s.artifact;return true;}
