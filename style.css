@@ -4,4 +4,4 @@
 
 .coop-panel label{display:block}.coop-panel small{display:block;line-height:1.6}
 
-.character-portraits{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}.character-portraits strong,.character-portraits small{display:block;margin-top:5px}.character-portraits small{font-size:10px;line-height:1.5;color:#b2c6d4}.portrait{width:100%;aspect-ratio:1/1.35;border-radius:8px;background-image:url('assets/characters.png');background-size:200% 100%;background-repeat:no-repeat;background-color:#45525a}.portrait-son{background-position:right center}.portrait-binh{background-position:left center}
+.character-portraits{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}.character-portraits strong,.character-portraits small{display:block;margin-top:5px}.character-portraits small{font-size:10px;line-height:1.5;color:#b2c6d4}.portrait{width:100%;aspect-ratio:1/1.6;border-radius:8px;background-image:url('assets/characters.png');background-size:200% auto;background-repeat:no-repeat;background-color:#45525a}.portrait-son{background-position:right 20%}.portrait-binh{background-position:left 20%}
